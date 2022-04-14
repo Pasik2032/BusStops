@@ -19,6 +19,7 @@ class MainView: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Остановки"
         configUI()
         // Do any additional setup after loading the view.
     }
@@ -27,7 +28,7 @@ class MainView: UIViewController {
         view.addSubview(tableView)
         tableView.frame = view.safeAreaLayoutGuide.layoutFrame
         tableView.dataSource = self
-//        tableView.delegate = self
+        tableView.delegate = self
     }
 
 
@@ -44,8 +45,14 @@ extension MainView: UITableViewDataSource {
         cell.textLabel?.text = stop?.name
         return cell
     }
-    
-    
+}
+
+extension MainView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let stop = presenter.stops?[indexPath.row]
+        let stopViewController = ModuleBuider.createStop(stop: stop)
+        navigationController?.pushViewController(stopViewController, animated: true)
+    }
 }
 
 extension MainView: MainViewProtocol {
