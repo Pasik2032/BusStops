@@ -13,20 +13,27 @@ protocol MainViewProtocol: class {
 }
 
 protocol MainViewPresenterProtocol: class{
-    init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
+    init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getStops()
     var stops: [BusStop]? {get set}
+    func tobOnTheStop(stop: BusStop?)
 }
 
 class MainPresenter: MainViewPresenterProtocol {
     weak var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
     var stops: [BusStop]?
+    var router: RouterProtocol?
     
-    required init(view: MainViewProtocol, networkService: NetworkServiceProtocol) {
+    required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.networkService = networkService
+        self.router = router
         getStops()
+    }
+    
+    func tobOnTheStop(stop: BusStop?) {
+        router?.showStop(stop: stop)
     }
     
     func getStops() {

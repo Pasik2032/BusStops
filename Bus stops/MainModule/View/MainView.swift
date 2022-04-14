@@ -50,8 +50,7 @@ extension MainView: UITableViewDataSource {
 extension MainView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stop = presenter.stops?[indexPath.row]
-        let stopViewController = ModuleBuider.createStop(stop: stop)
-        navigationController?.pushViewController(stopViewController, animated: true)
+        presenter.tobOnTheStop(stop: stop)
     }
 }
 

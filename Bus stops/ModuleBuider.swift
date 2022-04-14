@@ -8,24 +8,24 @@
 import Foundation
 import UIKit
 
-protocol Builder {
-    static func createMain() -> UIViewController
-    static func createStop(stop: BusStop?) -> UIViewController
+protocol BuilderProtocol {
+    func createMain(router: RouterProtocol) -> UIViewController
+    func createStop(router: RouterProtocol, stop: BusStop?) -> UIViewController
 }
 
-class ModuleBuider: Builder{
-    static func createMain() -> UIViewController {
+class ModuleBuider: BuilderProtocol{
+    func createMain(router: RouterProtocol) -> UIViewController {
         let view = MainView()
         let networkService = NetworkService()
-         let presenter = MainPresenter(view: view, networkService: networkService)
+        let presenter = MainPresenter(view: view, networkService: networkService, router: router)
         view.presenter = presenter
         return view
     }
     
-    static func createStop(stop: BusStop?) -> UIViewController {
+    func createStop(router: RouterProtocol, stop: BusStop?) -> UIViewController {
         let view = StopView()
         let networkService = NetworkService()
-         let presenter = StopPresenter(view: view, networkService: networkService, stop: stop)
+        let presenter = StopPresenter(view: view, networkService: networkService, router: router, stop: stop)
         view.presenter = presenter
         return view
     }

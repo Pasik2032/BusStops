@@ -22,6 +22,7 @@
 		E32E865628086B9A00E04786 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E865528086B9900E04786 /* Data.swift */; };
 		E32E865D2808842100E04786 /* StopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E865C2808842100E04786 /* StopPresenter.swift */; };
 		E32E865F280886BD00E04786 /* StopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E865E280886BD00E04786 /* StopView.swift */; };
+		E32E866228088D0600E04786 /* RouterMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E866128088D0600E04786 /* RouterMain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E32E865528086B9900E04786 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E32E865C2808842100E04786 /* StopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPresenter.swift; sourceTree = "<group>"; };
 		E32E865E280886BD00E04786 /* StopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopView.swift; sourceTree = "<group>"; };
+		E32E866128088D0600E04786 /* RouterMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,15 +113,16 @@
 		E32E861A28084D7200E04786 /* Bus stops */ = {
 			isa = PBXGroup;
 			children = (
-				E32E865A280883E800E04786 /* StopModule */,
 				E32E861D28084D7200E04786 /* SceneDelegate.swift */,
 				E32E861B28084D7200E04786 /* AppDelegate.swift */,
 				E32E864F2808548700E04786 /* ModuleBuider.swift */,
 				E32E865428085D4700E04786 /* SeviceLaver */,
+				E32E865A280883E800E04786 /* StopModule */,
 				E32E86512808560D00E04786 /* MainModule */,
-				E32E862428084D7700E04786 /* Assets.xcassets */,
 				E32E862628084D7700E04786 /* LaunchScreen.storyboard */,
 				E32E862928084D7700E04786 /* Info.plist */,
+				E32E866128088D0600E04786 /* RouterMain.swift */,
+				E32E862428084D7700E04786 /* Assets.xcassets */,
 			);
 			path = "Bus stops";
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				E32E862028084D7200E04786 /* MainView.swift in Sources */,
 				E32E861C28084D7200E04786 /* AppDelegate.swift in Sources */,
 				E32E865D2808842100E04786 /* StopPresenter.swift in Sources */,
+				E32E866228088D0600E04786 /* RouterMain.swift in Sources */,
 				E32E861E28084D7200E04786 /* SceneDelegate.swift in Sources */,
 				E32E865328085D1400E04786 /* NetworkService.swift in Sources */,
 				E32E865F280886BD00E04786 /* StopView.swift in Sources */,

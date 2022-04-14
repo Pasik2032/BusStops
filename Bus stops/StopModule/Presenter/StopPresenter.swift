@@ -12,7 +12,7 @@ protocol StopViewProtocol: class{
 }
 
 protocol StopViewPresenterProtocol: class{
-    init(view: StopViewProtocol, networkService: NetworkService, stop: BusStop?)
+    init(view: StopViewProtocol, networkService: NetworkService, router: RouterProtocol, stop: BusStop?)
     func setStopInfo()
 }
 
@@ -20,11 +20,13 @@ class StopPresenter: StopViewPresenterProtocol {
     weak var view: StopViewProtocol?
     let networkService: NetworkServiceProtocol!
     var stop: BusStop?
+    var router: RouterProtocol?
     
-    required init(view: StopViewProtocol, networkService: NetworkService, stop: BusStop?) {
+    required init(view: StopViewProtocol, networkService: NetworkService, router: RouterProtocol, stop: BusStop?) {
         self.view = view
         self.networkService = networkService
         self.stop = stop
+        self.router = router
     }
     
     public func setStopInfo() {
