@@ -18,20 +18,20 @@ class StopView: UIViewController{
         return controller
     }()
     
-    let stak: UIStackView = {
-        let controller = UIStackView()
-        controller.translatesAutoresizingMaskIntoConstraints = false
-        let label = UILabel()
-        label.text = "aaaaaaaaa"
-        controller.addSubview(label)
-        let labelb = UILabel()
-        labelb.text = "bbb"
-        controller.addSubview(labelb)
-        let labelc = UILabel()
-        labelc.text = "cccccccccccc"
-        controller.addSubview(labelc)
+    let nameLabel: UILabel = {
+        let controller = UILabel()
+        controller.textAlignment = .center
         return controller
     }()
+    
+    let stak: UIStackView = {
+        let controller = UIStackView()
+        controller.layer.cornerRadius = 40
+        controller.translatesAutoresizingMaskIntoConstraints = false
+        return controller
+    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,13 @@ class StopView: UIViewController{
     func configUI(){
         view.addSubview(map)
         map.frame = view.frame
+        view.addSubview(stak)
+        stak.backgroundColor = .systemBackground
+        stak.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        stak.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        stak.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        stak.heightAnchor.constraint(equalToConstant: view.frame.height / 4).isActive = true
+        stak.addArrangedSubview(nameLabel)
     }
 }
 
@@ -54,6 +61,7 @@ extension StopView: StopViewProtocol {
     }
     
     func setData(name: String) {
+        nameLabel.text = name
         print(name)
     }
 }

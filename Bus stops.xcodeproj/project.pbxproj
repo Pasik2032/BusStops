@@ -23,6 +23,7 @@
 		E32E865D2808842100E04786 /* StopPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E865C2808842100E04786 /* StopPresenter.swift */; };
 		E32E865F280886BD00E04786 /* StopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E865E280886BD00E04786 /* StopView.swift */; };
 		E32E866228088D0600E04786 /* RouterMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E866128088D0600E04786 /* RouterMain.swift */; };
+		E32E86642808AE9300E04786 /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E86632808AE9200E04786 /* InfomationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		E32E865C2808842100E04786 /* StopPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPresenter.swift; sourceTree = "<group>"; };
 		E32E865E280886BD00E04786 /* StopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopView.swift; sourceTree = "<group>"; };
 		E32E866128088D0600E04786 /* RouterMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMain.swift; sourceTree = "<group>"; };
+		E32E86632808AE9200E04786 /* InfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				E32E862928084D7700E04786 /* Info.plist */,
 				E32E866128088D0600E04786 /* RouterMain.swift */,
 				E32E862428084D7700E04786 /* Assets.xcassets */,
+				E32E86632808AE9200E04786 /* InfomationViewController.swift */,
 			);
 			path = "Bus stops";
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32E86642808AE9300E04786 /* InfomationViewController.swift in Sources */,
 				E32E864E280850F900E04786 /* MainPresenter.swift in Sources */,
 				E32E864C28084F7500E04786 /* BusStop.swift in Sources */,
 				E32E86502808548700E04786 /* ModuleBuider.swift in Sources */,
