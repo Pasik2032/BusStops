@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import MapKit
 
 protocol StopViewProtocol: class{
     func setData(name: String)
+    func setMap(coordinate: CLLocationCoordinate2D)
 }
 
 protocol StopViewPresenterProtocol: class{
@@ -30,6 +32,10 @@ class StopPresenter: StopViewPresenterProtocol {
     }
     
     public func setStopInfo() {
+        if let stop = stop {
+            let coord = CLLocationCoordinate2D(latitude: CLLocationDegrees(stop.lat), longitude: CLLocationDegrees(stop.lon))
+            view?.setMap(coordinate: coord)
+        }
         view?.setData(name: stop?.name ?? "404")
     }
 }
