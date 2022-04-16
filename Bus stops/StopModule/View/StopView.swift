@@ -155,7 +155,7 @@ extension StopView: StopViewProtocol {
     func showStopInfo(){
         UIView.animate(withDuration: 0.5, delay: 0.4,
                        options: [], animations: {
-            self.viewBack.center.y = self.view.bounds.height - self.view.bounds.height / 10
+            self.viewBack.center.y = self.view.bounds.height - 100
         }, completion: nil)
     }
 }
