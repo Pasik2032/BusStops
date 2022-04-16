@@ -11,6 +11,8 @@ struct RoutePath: Decodable {
     let type: String
     let number: String
     let timeArrival: [String]
+    let color: String
+    let fontColor: String
     
     var isGreen: Bool {
         get {

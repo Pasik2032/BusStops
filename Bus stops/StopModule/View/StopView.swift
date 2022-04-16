@@ -96,7 +96,7 @@ extension StopView: StopViewProtocol {
     
      func configCollectionView() {
          collectionView.dataSource = self
-         collectionView.register(MyCell.self, forCellWithReuseIdentifier: cellId)
+         collectionView.register(RouteView.self, forCellWithReuseIdentifier: cellId)
          viewBack.addSubview(collectionView)
         collectionView.leadingAnchor.constraint(equalTo: viewBack.leadingAnchor, constant: 10).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: viewBack.trailingAnchor, constant: -10).isActive = true
@@ -126,13 +126,15 @@ extension StopView: UICollectionViewDataSource {
         return presenter.routes?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MyCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! RouteView
         if let rout = presenter.routes?[indexPath.row] {
-            cell.dateLabel.text = rout.number
+            cell.numberLabel.text = rout.number
             if rout.isGreen {
-                cell.distanceLabel.textColor = .systemGreen
+                cell.timeLabel.textColor = .systemGreen
             }
-            cell.distanceLabel.text = rout.timeArrival.first
+            cell.numberLabel.backgroundColor = UIColor(hexString: rout.color)
+            cell.numberLabel.textColor = UIColor(hexString: rout.fontColor)
+            cell.timeLabel.text = rout.timeArrival.first
             cell.layer.masksToBounds = true
         }
         
