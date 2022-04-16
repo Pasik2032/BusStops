@@ -23,6 +23,7 @@
 		E32E866B2808CED200E04786 /* RoutePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E866A2808CED100E04786 /* RoutePath.swift */; };
 		E32E866D2808CFFB00E04786 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E866C2808CFFB00E04786 /* Routes.swift */; };
 		E3A66FEB280B764A00C1B14D /* StopPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A66FEA280B764A00C1B14D /* StopPresenterTests.swift */; };
+		E3A66FEE280B84B400C1B14D /* RoutePathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A66FED280B84B400C1B14D /* RoutePathTests.swift */; };
 		E3AFC0D9280AD29B00E38F88 /* RouteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AFC0D8280AD29A00E38F88 /* RouteViewCell.swift */; };
 		E3AFC0DB280AED9200E38F88 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AFC0DA280AED9200E38F88 /* UIColor+HEX.swift */; };
 		E3ED0B74280B6AE000467D32 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3ED0B73280B6AE000467D32 /* MainPresenterTests.swift */; };
@@ -31,13 +32,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		E32E862F28084D7800E04786 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E32E861028084D7200E04786 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E32E861728084D7200E04786;
-			remoteInfo = "Bus stops";
-		};
-		E32E863928084D7800E04786 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E32E861028084D7200E04786 /* Project object */;
 			proxyType = 1;
@@ -55,7 +49,6 @@
 		E32E862728084D7700E04786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E32E862928084D7700E04786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32E862E28084D7800E04786 /* Bus stopsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bus stopsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E32E863828084D7800E04786 /* Bus stopsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bus stopsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32E864B28084F7500E04786 /* BusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStop.swift; sourceTree = "<group>"; };
 		E32E864D280850F900E04786 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		E32E864F2808548700E04786 /* ModuleBuider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuider.swift; sourceTree = "<group>"; };
@@ -67,6 +60,7 @@
 		E32E866A2808CED100E04786 /* RoutePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePath.swift; sourceTree = "<group>"; };
 		E32E866C2808CFFB00E04786 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		E3A66FEA280B764A00C1B14D /* StopPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPresenterTests.swift; sourceTree = "<group>"; };
+		E3A66FED280B84B400C1B14D /* RoutePathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePathTests.swift; sourceTree = "<group>"; };
 		E3AFC0D8280AD29A00E38F88 /* RouteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewCell.swift; sourceTree = "<group>"; };
 		E3AFC0DA280AED9200E38F88 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 		E3ED0B73280B6AE000467D32 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
@@ -82,13 +76,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E32E862B28084D7800E04786 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E32E863528084D7800E04786 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -112,7 +99,6 @@
 			children = (
 				E32E861828084D7200E04786 /* Bus stops.app */,
 				E32E862E28084D7800E04786 /* Bus stopsTests.xctest */,
-				E32E863828084D7800E04786 /* Bus stopsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +213,7 @@
 		E3A66FE8280B760C00C1B14D /* StopModule */ = {
 			isa = PBXGroup;
 			children = (
+				E3A66FEC280B849300C1B14D /* Model */,
 				E3A66FE9280B762300C1B14D /* Presenter */,
 			);
 			path = StopModule;
@@ -238,6 +225,14 @@
 				E3A66FEA280B764A00C1B14D /* StopPresenterTests.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E3A66FEC280B849300C1B14D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3A66FED280B84B400C1B14D /* RoutePathTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E3ED0B71280B6A9600467D32 /* MainModule */ = {
@@ -294,24 +289,6 @@
 			productReference = E32E862E28084D7800E04786 /* Bus stopsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E32E863728084D7800E04786 /* Bus stopsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E32E864828084D7900E04786 /* Build configuration list for PBXNativeTarget "Bus stopsUITests" */;
-			buildPhases = (
-				E32E863428084D7800E04786 /* Sources */,
-				E32E863528084D7800E04786 /* Frameworks */,
-				E32E863628084D7800E04786 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E32E863A28084D7800E04786 /* PBXTargetDependency */,
-			);
-			name = "Bus stopsUITests";
-			productName = "Bus stopsUITests";
-			productReference = E32E863828084D7800E04786 /* Bus stopsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -326,10 +303,6 @@
 						CreatedOnToolsVersion = 13.3.1;
 					};
 					E32E862D28084D7800E04786 = {
-						CreatedOnToolsVersion = 13.3.1;
-						TestTargetID = E32E861728084D7200E04786;
-					};
-					E32E863728084D7800E04786 = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = E32E861728084D7200E04786;
 					};
@@ -350,7 +323,6 @@
 			targets = (
 				E32E861728084D7200E04786 /* Bus stops */,
 				E32E862D28084D7800E04786 /* Bus stopsTests */,
-				E32E863728084D7800E04786 /* Bus stopsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -366,13 +338,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E32E862C28084D7800E04786 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E32E863628084D7800E04786 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -410,14 +375,8 @@
 			files = (
 				E3A66FEB280B764A00C1B14D /* StopPresenterTests.swift in Sources */,
 				E3ED0B76280B724200467D32 /* RouterTests.swift in Sources */,
+				E3A66FEE280B84B400C1B14D /* RoutePathTests.swift in Sources */,
 				E3ED0B74280B6AE000467D32 /* MainPresenterTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E32E863428084D7800E04786 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,11 +387,6 @@
 			isa = PBXTargetDependency;
 			target = E32E861728084D7200E04786 /* Bus stops */;
 			targetProxy = E32E862F28084D7800E04786 /* PBXContainerItemProxy */;
-		};
-		E32E863A28084D7800E04786 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E32E861728084D7200E04786 /* Bus stops */;
-			targetProxy = E32E863928084D7800E04786 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -658,42 +612,6 @@
 			};
 			name = Release;
 		};
-		E32E864928084D7900E04786 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LJQ6356456;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.hse.cs.Bus-stopsUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Bus stops";
-			};
-			name = Debug;
-		};
-		E32E864A28084D7900E04786 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LJQ6356456;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.hse.cs.Bus-stopsUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Bus stops";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -720,15 +638,6 @@
 			buildConfigurations = (
 				E32E864628084D7900E04786 /* Debug */,
 				E32E864728084D7900E04786 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E32E864828084D7900E04786 /* Build configuration list for PBXNativeTarget "Bus stopsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E32E864928084D7900E04786 /* Debug */,
-				E32E864A28084D7900E04786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
