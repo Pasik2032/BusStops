@@ -40,7 +40,7 @@ class StopView: UIViewController {
     
     let notRoutLabel : UILabel = {
         let notRoutLabel = UILabel()
-        notRoutLabel.text = "К сожелению, у нас нет данных о маршрутах на этой остановки."
+        notRoutLabel.text = "R сожалению, у нас нет данных о маршруте по данной остановке."
         notRoutLabel.numberOfLines = 3
         notRoutLabel.adjustsFontSizeToFitWidth = true
         notRoutLabel.translatesAutoresizingMaskIntoConstraints = false
