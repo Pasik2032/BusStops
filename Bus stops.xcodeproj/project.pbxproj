@@ -25,7 +25,7 @@
 		E32E866228088D0600E04786 /* RouterMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E866128088D0600E04786 /* RouterMain.swift */; };
 		E32E866B2808CED200E04786 /* RoutePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E866A2808CED100E04786 /* RoutePath.swift */; };
 		E32E866D2808CFFB00E04786 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E866C2808CFFB00E04786 /* Routes.swift */; };
-		E3AFC0D9280AD29B00E38F88 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AFC0D8280AD29A00E38F88 /* RouteView.swift */; };
+		E3AFC0D9280AD29B00E38F88 /* RouteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AFC0D8280AD29A00E38F88 /* RouteViewCell.swift */; };
 		E3AFC0DB280AED9200E38F88 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AFC0DA280AED9200E38F88 /* UIColor+HEX.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +69,7 @@
 		E32E866128088D0600E04786 /* RouterMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMain.swift; sourceTree = "<group>"; };
 		E32E866A2808CED100E04786 /* RoutePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePath.swift; sourceTree = "<group>"; };
 		E32E866C2808CFFB00E04786 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
-		E3AFC0D8280AD29A00E38F88 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
+		E3AFC0D8280AD29A00E38F88 /* RouteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewCell.swift; sourceTree = "<group>"; };
 		E3AFC0DA280AED9200E38F88 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,8 +126,8 @@
 				E32E864F2808548700E04786 /* ModuleBuider.swift */,
 				E32E866128088D0600E04786 /* RouterMain.swift */,
 				E32E865428085D4700E04786 /* SeviceLaver */,
-				E32E865A280883E800E04786 /* StopModule */,
 				E32E86512808560D00E04786 /* MainModule */,
+				E32E865A280883E800E04786 /* StopModule */,
 				E32E862628084D7700E04786 /* LaunchScreen.storyboard */,
 				E32E862928084D7700E04786 /* Info.plist */,
 				E32E862428084D7700E04786 /* Assets.xcassets */,
@@ -156,9 +156,9 @@
 		E32E86512808560D00E04786 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				E32E86592808815700E04786 /* Presenter */,
-				E32E86582808814500E04786 /* View */,
 				E32E86572808811400E04786 /* Model */,
+				E32E86582808814500E04786 /* View */,
+				E32E86592808815700E04786 /* Presenter */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				E32E865E280886BD00E04786 /* StopView.swift */,
-				E3AFC0D8280AD29A00E38F88 /* RouteView.swift */,
+				E3AFC0D8280AD29A00E38F88 /* RouteViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 				E32E861E28084D7200E04786 /* SceneDelegate.swift in Sources */,
 				E32E865328085D1400E04786 /* NetworkService.swift in Sources */,
 				E32E866B2808CED200E04786 /* RoutePath.swift in Sources */,
-				E3AFC0D9280AD29B00E38F88 /* RouteView.swift in Sources */,
+				E3AFC0D9280AD29B00E38F88 /* RouteViewCell.swift in Sources */,
 				E32E865F280886BD00E04786 /* StopView.swift in Sources */,
 				E32E865628086B9A00E04786 /* Data.swift in Sources */,
 			);

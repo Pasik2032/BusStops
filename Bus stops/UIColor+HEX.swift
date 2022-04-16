@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// An extension that allows you to create UIColor by HEX.
 extension UIColor {
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

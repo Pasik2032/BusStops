@@ -7,24 +7,27 @@
 
 import Foundation
 
-protocol MainViewProtocol: class {
+// MARK: - View Protocol
+protocol MainViewProtocol: AnyObject {
     func succes()
     func failer(error: Error)
 }
 
-protocol MainViewPresenterProtocol: class{
+// MARK: - View Protocol
+protocol MainViewPresenterProtocol: AnyObject{
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getStops()
     var stops: [BusStop]? {get set}
     func tobOnTheStop(stop: BusStop?)
 }
-
 class MainPresenter: MainViewPresenterProtocol {
+    // MARK: - Fields
     weak var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
     var stops: [BusStop]?
     var router: RouterProtocol?
     
+    // MARK: - Lifecycle
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.networkService = networkService
@@ -32,6 +35,7 @@ class MainPresenter: MainViewPresenterProtocol {
         getStops()
     }
     
+    // MARK: - Methods
     func tobOnTheStop(stop: BusStop?) {
         router?.showStop(stop: stop)
     }

@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 
+// MARK: - Builder
 protocol BuilderProtocol {
     func createMain(router: RouterProtocol) -> UIViewController
     func createStop(router: RouterProtocol, stop: BusStop?) -> UIViewController
 }
 
 class ModuleBuider: BuilderProtocol{
+    
     func createMain(router: RouterProtocol) -> UIViewController {
         let view = MainView()
         let networkService = NetworkService()

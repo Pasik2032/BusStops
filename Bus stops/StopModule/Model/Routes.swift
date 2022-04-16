@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Structure for getting the RoutePath array.
 struct Routes: Decodable {
     public let routePath: [RoutePath]
 }

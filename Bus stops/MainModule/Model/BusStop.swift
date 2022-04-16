@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Structure describing the stop.
 struct BusStop: Decodable {
     let name: String
     let id: String
