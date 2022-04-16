@@ -74,7 +74,6 @@ class StopView: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if self.isMovingFromParent {
-            print("niiil")
             Router.currentStop = nil
         }
     }

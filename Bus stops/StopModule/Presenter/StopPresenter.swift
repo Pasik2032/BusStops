@@ -19,7 +19,7 @@ protocol StopViewProtocol: AnyObject{
 
 // MARK: - Presentor Protocol
 protocol StopViewPresenterProtocol: AnyObject{
-    init(view: StopViewProtocol, networkService: NetworkService, router: RouterProtocol, stop: BusStop?)
+    init(view: StopViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, stop: BusStop?)
     func setStopInfo()
     func getRoutes()
     var routes: [RoutePath]? {get set}
@@ -33,7 +33,7 @@ class StopPresenter: StopViewPresenterProtocol {
     var routes: [RoutePath]?
     var router: RouterProtocol?
     
-    required init(view: StopViewProtocol, networkService: NetworkService, router: RouterProtocol, stop: BusStop?) {
+    required init(view: StopViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, stop: BusStop?) {
         self.view = view
         self.networkService = networkService
         self.stop = stop
