@@ -37,7 +37,6 @@ class MainPresenter: MainViewPresenterProtocol {
     }
     
     func getStops() {
-        print("aaaaaa")
         networkService.getStops { [weak self] result in
             guard let self = self else {return}
             DispatchQueue.main.async {

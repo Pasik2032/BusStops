@@ -11,6 +11,8 @@ import MapKit
 class StopView: UIViewController{
     
     var presenter: StopViewPresenterProtocol!
+
+    let cellId = "Cell"
     
     let map: MKMapView = {
         let controller = MKMapView()
@@ -21,95 +23,89 @@ class StopView: UIViewController{
     let nameLabel: UILabel = {
         let controller = UILabel()
         controller.font = UIFont.boldSystemFont(ofSize: 25.0)
-        controller.numberOfLines = 0
-        //        controller.textAlignment = .center
-        return controller
-    }()
-    
-    let stak: UIStackView = {
-        let controller = UIStackView()
-        controller.axis = .vertical
-        controller.layer.cornerRadius = 20
-        controller.alignment = .leading
-        controller.spacing = 30
-//        controller.distribution = .fill
+        controller.numberOfLines = 2
         controller.translatesAutoresizingMaskIntoConstraints = false
+        controller.adjustsFontSizeToFitWidth = true
         return controller
     }()
     
-    let stakRoutes: UIStackView = {
-        let controller = UIStackView()
-        controller.axis = .horizontal
-        controller.spacing = 20
-        
-//        controller.distribution  = UIStackView.Distribution.fill
-        controller.translatesAutoresizingMaskIntoConstraints = false
-        return controller
+    let viewBack: UIView = {
+        let c = UIView()
+        c.layer.cornerRadius = 20
+        c.backgroundColor = .systemBackground
+        c.translatesAutoresizingMaskIntoConstraints = false
+        return c
     }()
     
+    let notRoutLabel : UILabel = {
+        let notRoutLabel = UILabel()
+        notRoutLabel.text = "К сожелению, у нас нет данных о маршрутах на этой остановки."
+        notRoutLabel.numberOfLines = 3
+        notRoutLabel.adjustsFontSizeToFitWidth = true
+        notRoutLabel.translatesAutoresizingMaskIntoConstraints = false
+        return notRoutLabel
+    }()
     
+    let collectionView: UICollectionView = {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 70, height: 60)
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor =  UIColor(white: 1, alpha: 0)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
         presenter.setStopInfo()
     }
-    
+// MARK: - Config UI
     func configUI(){
+        // Config map
         view.addSubview(map)
         map.frame = view.frame
-        view.addSubview(stak)
-        stak.backgroundColor = .systemBackground
-        stak.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        stak.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        stak.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
-        stak.addArrangedSubview(nameLabel)
-        stak.addArrangedSubview(stakRoutes)
-        nameLabel.topAnchor.constraint(equalTo: stak.topAnchor, constant: 10).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: stak.leftAnchor, constant: 10).isActive = true
-        stakRoutes.leftAnchor.constraint(equalTo: stak.leftAnchor, constant: 15).isActive = true
+        
+        // Config viewBack
+        view.addSubview(viewBack)
+        viewBack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        viewBack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        viewBack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        viewBack.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        // Config name
+        viewBack.addSubview(nameLabel)
+        nameLabel.topAnchor.constraint(equalTo: viewBack.topAnchor, constant: 10).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: viewBack.leftAnchor, constant: 10).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: viewBack.rightAnchor, constant: -10).isActive = true
+        
     }
+
 }
 
 extension StopView: StopViewProtocol {
-    func succes() {
-        if let routes = presenter.routes {
-            for rout in routes {
-                let routStack = UIStackView()
-                routStack.axis = .vertical
-                routStack.alignment = .fill
-                let number = UILabel()
-                number.text = rout.number
-                let time = UILabel()
-                let a = rout.timeArrival.first ?? "10 0"
-                if let b = Int(a.split(separator: " ")[0]) {
-                    if b < 5 {
-                        time.textColor = .systemGreen
-                    }
-                } else {
-                    time.textColor = .systemGreen
-                }
-                print("num = \(a)")
-                number.font = UIFont.systemFont(ofSize: 25)
-                number.numberOfLines = 0
-                time.numberOfLines = 0
-                time.font = UIFont.systemFont(ofSize: 15)
-                time.text = rout.timeArrival.first
-                routStack.addArrangedSubview(number)
-                routStack.addArrangedSubview(time)
-                stakRoutes.addArrangedSubview(routStack)
-            }
-        }
-
-        stakRoutes.bottomAnchor.constraint(equalTo: stak.bottomAnchor, constant: 200).isActive = true
-        stakRoutes.rightAnchor.constraint(equalTo: stak.rightAnchor, constant: 20).isActive = true
-        stakRoutes.leftAnchor.constraint(equalTo: stak.leftAnchor, constant: 20).isActive = true
-        stakRoutes.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20).isActive = true
-        
+    
+    func noRoutes() {
+        viewBack.addSubview(notRoutLabel)
+        notRoutLabel.leadingAnchor.constraint(equalTo: viewBack.leadingAnchor, constant: 10).isActive = true
+        notRoutLabel.trailingAnchor.constraint(equalTo: viewBack.trailingAnchor, constant: -10).isActive = true
+        notRoutLabel.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        notRoutLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
     }
     
-    func failer(error: Error) {
-        print(error.localizedDescription)
+     func configCollectionView() {
+         collectionView.dataSource = self
+         collectionView.register(MyCell.self, forCellWithReuseIdentifier: cellId)
+         viewBack.addSubview(collectionView)
+        collectionView.leadingAnchor.constraint(equalTo: viewBack.leadingAnchor, constant: 10).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: viewBack.trailingAnchor, constant: -10).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        collectionView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
+    }
+    
+    func succes() {
+        collectionView.reloadData()
     }
     
     
@@ -124,3 +120,23 @@ extension StopView: StopViewProtocol {
         print(name)
     }
 }
+
+extension StopView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.routes?.count ?? 0
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MyCell
+        if let rout = presenter.routes?[indexPath.row] {
+            cell.dateLabel.text = rout.number
+            if rout.isGreen {
+                cell.distanceLabel.textColor = .systemGreen
+            }
+            cell.distanceLabel.text = rout.timeArrival.first
+            cell.layer.masksToBounds = true
+        }
+        
+        return cell
+    }
+}
+

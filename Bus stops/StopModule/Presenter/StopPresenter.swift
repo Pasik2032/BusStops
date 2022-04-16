@@ -12,7 +12,8 @@ protocol StopViewProtocol: class{
     func setData(name: String)
     func setMap(coordinate: CLLocationCoordinate2D)
     func succes()
-    func failer(error: Error)
+    func configCollectionView()
+    func noRoutes()
 }
 
 protocol StopViewPresenterProtocol: class{
@@ -30,10 +31,17 @@ class StopPresenter: StopViewPresenterProtocol {
                 switch result {
                 case .success(let routes):
                     self.routes = routes
-                    self.view?.succes()
+                    if let routes = routes {
+                        if !routes.isEmpty{
+                            self.view?.configCollectionView()
+                            self.view?.succes()
+                        } else {
+                            self.view?.noRoutes()
+                        }
+                    }
                 case .failure(let error):
-                    print("errr")
-                    self.view?.failer(error: error)
+                    print(error.localizedDescription)
+                    self.view?.noRoutes()
                 }
             }
         })
